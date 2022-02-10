@@ -4,7 +4,7 @@ const schema = mongoose.Schema;
 const dbConnect = async () => {
     try {
         await mongoose.connect(
-            "mongodb+srv://root:root@cluster0.e1c4w.mongodb.net/passwordreset",
+            process.env.DB_URL,
             {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
