@@ -64,7 +64,7 @@ router.post('/forgot-password', async (req, res) => {
             const string = Crypto.randomBytes(25).toString('hex');
             const doc = await user.findOneAndUpdate({ email: email }, { verifyString: string }, { new: true })
             const resetJWT = await createJWT({ email, string }, 'verify')
-            const link = `http://localhost:3000/forgot-password-redirect/${resetJWT}/${string}`
+            const link = `https://pwd-rst.netlify.app/forgot-password-redirect/${resetJWT}/${string}`
             let sentMail = sendMail(email, link)
             if (sentMail) {
                 res.status(200).send({ token: resetJWT });
