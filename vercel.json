@@ -1,4 +1,6 @@
-{
+{ 
+    "version": 2,
+    "name": "pwd-rst-be",
     "builds": [
       {
         "src": "./app.js",
